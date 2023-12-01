@@ -1,0 +1,10 @@
+/* Define styles for completed tasks */
+.completed {
+  text-decoration: line-through; /* Apply line-through style for completed tasks */
+  color: #888; /* Dim the color for completed tasks */
+}
+
+/* Define styles for incomplete tasks */
+.incomplete {
+  /* Define regular styles for incomplete tasks */
+}
