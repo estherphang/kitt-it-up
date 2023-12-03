@@ -1,0 +1,29 @@
+/* TimerDisplay.css */
+
+.timer-digit {
+  margin: 35px 35px 20px 35px;
+  font-size: 11em; /* Adjust font size as needed */
+  color: white; /* Initial color */
+  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.4);
+  transition: color 0.5s ease-in-out;
+  animation: bounceAnimation 1.65s infinite alternate,
+    colorChange 3s infinite alternate;
+}
+
+@keyframes bounceAnimation {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px); /* Adjust the bounce height as desired */
+  }
+}
+
+@keyframes colorChange {
+  from {
+    color: #ffffff; /* Initial color */
+  }
+  to {
+    color: #e1f5fe; /* Darker shade or desired color */
+  }
+}
