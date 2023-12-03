@@ -1,7 +1,96 @@
-/* Define styles for completed tasks */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #f8f9f9;
+}
+
+/* Menu bar */
+
+.nav {
+  width: 700px;
+  display: flex;
+  flex-direction: r;
+  margin: auto;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.logo {
+  align-self: flex-start;
+  font-size: 2.2em;
+}
+
+/* timer  */
+
+.timer-container {
+  width: 700px;
+  background-color: rgba(8, 14, 69, 0.15);
+  border-radius: 18px;
+  align-items: center;
+  margin: auto;
+  padding: 35px;
+}
+
+.timer-title {
+  font-size: 2em;
+}
+
+.pomo-counter {
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  font-size: 0.8em;
+  width: 700px;
+  text-align: right;
+  background-image: linear-gradient(
+    to right,
+    rgba(8, 14, 69, 0),
+    rgba(8, 14, 69, 0.1)
+  );
+}
+
+.container {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}
+
+.settings {
+  align-items: center;
+}
+
+.breaktime {
+  background-color: #455a64;
+  width: 100vw;
+  height: 100vh;
+}
+
+.worktime {
+  background-color: #01579b;
+  width: 100vw;
+  height: 100vh;
+}
+
+.timer-container {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+
 .completed {
   text-decoration: line-through; /* Apply line-through style for completed tasks */
-  color: #888; /* Dim the color for completed tasks */
+  color: #b2ebf2; /* Dim the color for completed tasks */
 }
 
 /* Define styles for incomplete tasks */
