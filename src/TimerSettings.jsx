@@ -1,5 +1,6 @@
 import React from "react";
 import "./TimerSetting.css";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const TimerSettings = ({
   showSetting,
@@ -15,7 +16,10 @@ const TimerSettings = ({
         <div className="settings-card">
           <div className="setting-nav">
             <h3>SETTINGS</h3>
-            <button onClick={() => setShowSetting(false)}>X</button>
+            <CancelIcon
+              onClick={() => setShowSetting(false)}
+              sx={{ color: "#455a64" }}
+            />
           </div>
           <div>
             <label>

@@ -7,6 +7,8 @@ import PauseIcon from "@mui/icons-material/Pause";
 import FastForwardIcon from "@mui/icons-material/FastForward";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import { IconButton } from "@mui/material";
+import { Button } from "@mui/material";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 export default function App() {
   //create timer, showing minutes and seconds
@@ -115,7 +117,20 @@ export default function App() {
         <div className={isOnBreak ? "breaktime" : "worktime"}>
           <div className="nav">
             <h1 className="logo">Kitt It Up!</h1>
-            {!showSetting && <button onClick={toggleSettings}>Settings</button>}
+            {!showSetting && (
+              <Button
+                size="large"
+                variant="outlined"
+                style={{
+                  color: "white",
+                  border: "2px solid #e1f5fe",
+                }}
+                onClick={toggleSettings}
+              >
+                <SettingsIcon />
+                Settings
+              </Button>
+            )}
 
             {showSetting && (
               <TimerSettings

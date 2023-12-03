@@ -51,7 +51,6 @@ const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
               style={{
                 color: "white",
                 border: "2px solid #e1f5fe",
-                textDecoration: "none",
               }}
               disabled={!editedTask.trim()}
             >
@@ -65,7 +64,6 @@ const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
               style={{
                 color: "white",
                 border: "2px solid #e1f5fe",
-                textDecoration: "none",
               }}
               onClick={cancelEdit}
             >

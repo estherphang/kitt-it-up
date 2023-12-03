@@ -49,10 +49,6 @@ const Todo = ({ todo, toggleTodo, deleteTodo, editTodo, handleStartStop }) => {
                 sx={{
                   color: "white",
                   border: "2px solid #e1f5fe",
-                  textDecoration: "none",
-                  "& .MuiButton-label": {
-                    textDecoration: "none", // Apply text decoration to the Button's label
-                  },
                 }}
                 onClick={handleEdit}
               >
@@ -67,7 +63,6 @@ const Todo = ({ todo, toggleTodo, deleteTodo, editTodo, handleStartStop }) => {
                 sx={{
                   color: "white",
                   border: "2px solid #e1f5fe",
-                  textDecoration: "none",
                 }}
                 onClick={() => deleteTodo(todo.id)}
               >
