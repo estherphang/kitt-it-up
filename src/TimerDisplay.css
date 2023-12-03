@@ -1,8 +1,8 @@
 /* TimerDisplay.css */
 
 .timer-digit {
-  margin: 35px 35px 20px 35px;
-  font-size: 11em; /* Adjust font size as needed */
+  margin: 35px 35px 18px 35px;
+  font-size: 8em; /* Adjust font size as needed */
   color: white; /* Initial color */
   text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.4);
   transition: color 0.5s ease-in-out;

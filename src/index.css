@@ -13,12 +13,13 @@ body {
   color: #f8f9f9;
 }
 
+/* ---------------------------------------------- */
+
 /* Menu bar */
 
 .nav {
   width: 700px;
   display: flex;
-  flex-direction: r;
   margin: auto;
   justify-content: space-between;
   padding: 30px 0px;
@@ -29,6 +30,12 @@ body {
   font-size: 2.2em;
 }
 
+.settings {
+  align-items: center;
+}
+
+/* ---------------------------------------------- */
+
 /* timer  */
 
 .timer-container {
@@ -38,6 +45,9 @@ body {
   align-items: center;
   margin: auto;
   padding: 35px;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
 }
 
 .timer-title {
@@ -57,43 +67,93 @@ body {
   );
 }
 
-.container {
+/* ---------------------------------------------- */
+
+/* to do list  */
+
+.todo-container {
   width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: auto;
-  justify-content: center;
+  padding: 30px 0px 0px 0px;
 }
 
-.settings {
-  align-items: center;
+.todo-title {
+  color: white;
+  font-size: 1.5em;
+  padding: 0px 0px 15px 0px;
 }
+
+.text-area {
+  width: 700px;
+  margin: auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.textfield {
+  color: white !important;
+  border: 2px solid #e1f5fe !important;
+}
+
+.textfield-bg {
+  border: 2px solid #e1f5fe !important;
+  color: white !important;
+}
+
+.task-addbtn {
+  color: white !important;
+  border: 2px solid #e1f5fe !important;
+}
+
+.task-area {
+  margin: 30px 20px;
+}
+.task-list {
+  margin: 30px 20px;
+}
+
+.individualtask-area {
+  width: 680px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task {
+  width: 450px;
+}
+/* ---------------------------------------------- */
+
+/* background colour change 
+do not edit */
 
 .breaktime {
   background-color: #455a64;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
 }
 
 .worktime {
   background-color: #01579b;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
 }
 
-.timer-container {
-  display: flex;
-  align-self: flex-start;
-  flex-direction: column;
+/* ---------------------------------------------- */
+
+ul {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+ul li {
+  margin-bottom: 20px;
 }
 
 .completed {
-  text-decoration: line-through; /* Apply line-through style for completed tasks */
-  color: #b2ebf2; /* Dim the color for completed tasks */
-}
-
-/* Define styles for incomplete tasks */
-.incomplete {
-  /* Define regular styles for incomplete tasks */
+  text-decoration: line-through;
+  color: #b2ebf2;
 }

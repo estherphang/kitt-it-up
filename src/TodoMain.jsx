@@ -1,9 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoList from "./TodoList";
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
-export default function TodoMain() {
-  const [todos, setTodos] = useState([]);
+const getLocalStorage = () => {
+  let list = localStorage.getItem("list");
+  return list ? JSON.parse(list) : [];
+  // if (list) {
+  //   return (list = JSON.parse(localStorage.getItem("list")));
+  // } else {
+  //   return [];
+};
+
+export default function TodoMain(s) {
+  const [todos, setTodos] = useState(getLocalStorage());
   const [newItem, setNewItem] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (title) => {
     setTodos([
@@ -49,22 +65,40 @@ export default function TodoMain() {
 
   return (
     <>
-      <h1>To-do List</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
-          type="text"
-          placeholder="Add new task"
-        />
-        <button type="submit">Add</button>
-      </form>
-      <TodoList
-        todos={todos}
-        toggleTodo={toggleTodo}
-        deleteTodo={deleteTodo}
-        editTodo={editTodo}
-      />
+      <div className="todo-container">
+        <h1 className="todo-title">Tasks</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="text-area">
+            <TextField
+              id="outlined-basic"
+              value={newItem}
+              onChange={(e) => setNewItem(e.target.value)}
+              type="text"
+              placeholder="Add new task"
+              sx={{ width: 550 }}
+              InputLabelProps={{ className: "textfield" }}
+              InputProps={{
+                className: "textfield-bg",
+              }}
+            />
+            <Button
+              variant="outlined"
+              type="submit"
+              style={{ color: "white", border: "2px solid #e1f5fe" }}
+            >
+              Add Task <AddIcon />
+            </Button>
+          </div>
+        </form>
+        <div className="task-area">
+          <TodoList
+            todos={todos}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+            editTodo={editTodo}
+          />
+        </div>
+      </div>
     </>
   );
 }

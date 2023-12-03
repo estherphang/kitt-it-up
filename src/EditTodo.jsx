@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { Input } from "@mui/material";
+import { Button } from "@mui/material";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
   const [editedTask, setEditedTask] = useState(todo.title);
@@ -17,19 +21,61 @@ const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleSave();
-      }}
-    >
-      <input type="text" value={editedTask} onChange={handleInputChange} />
-      {/* disable save button if string is empty */}
-      <button type="submit" disabled={!editedTask.trim()}>
-        Save
-      </button>
-      <button onClick={cancelEdit}>Cancel</button>
-    </form>
+    <div className="text-area">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSave();
+        }}
+      >
+        <div className="individualtask-area">
+          <Input
+            value={editedTask}
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Edit task"
+            sx={{
+              width: 440,
+              input: {
+                color: "white",
+                fontSize: "18px",
+                borderBottom: "white",
+              },
+            }}
+          />
+          {/* disable save button if string is empty */}
+          <div>
+            <Button
+              variant="outlined"
+              type="submit"
+              style={{
+                color: "white",
+                border: "2px solid #e1f5fe",
+                textDecoration: "none",
+              }}
+              disabled={!editedTask.trim()}
+            >
+              Save <SaveIcon />
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant="outlined"
+              type="submit"
+              style={{
+                color: "white",
+                border: "2px solid #e1f5fe",
+                textDecoration: "none",
+              }}
+              onClick={cancelEdit}
+            >
+              Cancel
+              <CancelIcon />
+            </Button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ const Timer = () => {
   const [breakDuration, setBreakDuration] = useState(5 * 60); // Initial break duration set to 5 minutes in seconds
   const [showSetting, setShowSetting] = useState(false);
   const [pomodoroCounter, setPomodoroCounter] = useState(0);
+  // const [bgColor, setBgColor] = useState("#ffb703");
 
   //Format timer string
   const formatTime = (timeInSeconds) => {
@@ -101,15 +102,19 @@ const Timer = () => {
 
   return (
     <>
-      <h1>Pomodoro Timer</h1>
-      <TimerSettings
-        showSetting={showSetting}
-        setShowSetting={setShowSetting}
-        workDuration={workDuration}
-        breakDuration={breakDuration}
-        handleWorkDurationChange={handleWorkDurationChange}
-        handleBreakDurationChange={handleBreakDurationChange}
-      />
+      <div className="header">
+        <h1 className="container logo">Kitt It Up!</h1>
+        <div className="settings">
+          <TimerSettings
+            showSetting={showSetting}
+            setShowSetting={setShowSetting}
+            workDuration={workDuration}
+            breakDuration={breakDuration}
+            handleWorkDurationChange={handleWorkDurationChange}
+            handleBreakDurationChange={handleBreakDurationChange}
+          />
+        </div>
+      </div>
       <TimerDisplay
         timer={timer}
         isRunning={isRunning}
