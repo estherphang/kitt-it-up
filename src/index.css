@@ -26,10 +26,17 @@ body {
 }
 
 .logo {
+  display: flex;
   align-self: flex-start;
   font-size: 2.2em;
+  align-items: center;
+  justify-content: center;
 }
 
+.logo img {
+  height: 50px;
+  padding-right: 10px;
+}
 .settings {
   align-items: center;
 }

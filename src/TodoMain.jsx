@@ -7,13 +7,9 @@ import AddIcon from "@mui/icons-material/Add";
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
   return list ? JSON.parse(list) : [];
-  // if (list) {
-  //   return (list = JSON.parse(localStorage.getItem("list")));
-  // } else {
-  //   return [];
 };
 
-export default function TodoMain(s) {
+export default function TodoMain() {
   const [todos, setTodos] = useState(getLocalStorage());
   const [newItem, setNewItem] = useState("");
 

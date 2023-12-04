@@ -2,23 +2,48 @@ import React, { useState, useEffect } from "react";
 import TodoMain from "./TodoMain";
 import "./TimerDisplay.css";
 import TimerSettings from "./TimerSettings";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import PauseIcon from "@mui/icons-material/Pause";
-import FastForwardIcon from "@mui/icons-material/FastForward";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
+import Timer from "./Timer";
+
+//put inside empty array for new users
+// Initial work duration set to 25 minutes in seconds and break duration set to 5 minutes in seconds
+const timerLocalStorage = () => {
+  let time = localStorage.getItem("timer");
+  return time ? JSON.parse(time) : 25 * 60;
+};
+
+// Initial break duration set to 5 minutes in seconds
+const breakLocalStorage = () => {
+  let breakTime = localStorage.getItem("breakDuration");
+  return breakTime ? JSON.parse(breakTime) : 5 * 60;
+};
+
+// Initial work duration set to 25 minutes in seconds
+const workLocalStorage = () => {
+  let workTime = localStorage.getItem("workDuration");
+  return workTime ? JSON.parse(workTime) : 25 * 60;
+};
+
+const onBreakLocalStorage = () => {
+  let onBreak = localStorage.getItem("isOnBreak");
+  return onBreak ? JSON.parse(onBreak) : false;
+};
+
+const countPomoLocalStorage = () => {
+  let countPomo = localStorage.getItem("pomodoroCounter");
+  return countPomo ? JSON.parse(countPomo) : 0;
+};
 
 export default function App() {
   //create timer, showing minutes and seconds
-  const [timer, setTimer] = useState(25 * 60);
+  const [timer, setTimer] = useState(timerLocalStorage);
   const [isRunning, setIsRunning] = useState(false);
-  const [isOnBreak, setIsOnBreak] = useState(false);
-  const [workDuration, setWorkDuration] = useState(25 * 60); // Initial work duration set to 25 minutes in seconds
-  const [breakDuration, setBreakDuration] = useState(5 * 60); // Initial break duration set to 5 minutes in seconds
+  const [isOnBreak, setIsOnBreak] = useState(onBreakLocalStorage);
+  const [workDuration, setWorkDuration] = useState(workLocalStorage);
+  const [breakDuration, setBreakDuration] = useState(breakLocalStorage);
+  const [pomodoroCounter, setPomodoroCounter] = useState(countPomoLocalStorage);
   const [showSetting, setShowSetting] = useState(false);
-  const [pomodoroCounter, setPomodoroCounter] = useState(0);
 
   //Format timer string
   const formatTime = (timeInSeconds) => {
@@ -33,6 +58,9 @@ export default function App() {
 
     return `${formattedMinutes}:${formattedSeconds}`;
   };
+
+  //Alarm sound
+  const audio = new Audio("/meow.mp3");
 
   useEffect(() => {
     let interval;
@@ -50,10 +78,23 @@ export default function App() {
         setIsOnBreak(true);
       }
       setIsRunning(false);
+      audio.play();
     }
+    localStorage.setItem("timer", JSON.stringify(timer));
+    localStorage.setItem("isOnBreak", JSON.stringify(isOnBreak));
+    localStorage.setItem("workDuration", JSON.stringify(workDuration));
+    localStorage.setItem("breakDuration", JSON.stringify(breakDuration));
+    localStorage.setItem("pomodoroCounter", JSON.stringify(pomodoroCounter));
 
     return () => clearInterval(interval);
-  }, [isRunning, timer, isOnBreak, workDuration, breakDuration]);
+  }, [
+    isRunning,
+    timer,
+    isOnBreak,
+    workDuration,
+    breakDuration,
+    pomodoroCounter,
+  ]);
 
   //Start and Stop Timer
   const handleStartStop = () => {
@@ -64,6 +105,9 @@ export default function App() {
     setIsRunning(false);
     setIsOnBreak(false);
     setTimer(25 * 60); //reset timer
+    setWorkDuration(25 * 60); //reset workduration
+    setBreakDuration(5 * 60); //reset breakduration
+    setPomodoroCounter(0); //reset pomo counter
   };
 
   //Fast foward function
@@ -116,7 +160,10 @@ export default function App() {
       <div className="container">
         <div className={isOnBreak ? "breaktime" : "worktime"}>
           <div className="nav">
-            <h1 className="logo">Kitt It Up!</h1>
+            <h1 className="logo">
+              <img src="/kitty.png" />
+              Kitt It Up!
+            </h1>
             {!showSetting && (
               <Button
                 size="large"
@@ -143,54 +190,17 @@ export default function App() {
               />
             )}
           </div>
-          <div className="timer-container">
-            <h2 className="timer-title">
-              {isOnBreak ? "TAKE A BREAK" : "TIME TO FOCUS"}
-            </h2>
-            <div>
-              <h2 className="timer-digit">{formatTime(timer)}</h2>
-            </div>
-            <div>
-              <IconButton
-                style={{
-                  margin: "8px",
-                  color: "white",
-                  fontSize: "2.6em",
-                }}
-                onClick={handleStartStop}
-              >
-                {/* when running show pause. */}
-                {isRunning ? (
-                  <PauseIcon fontSize="inherit" />
-                ) : (
-                  <PlayArrowIcon fontSize="inherit" />
-                )}
-              </IconButton>
-              <IconButton
-                style={{
-                  margin: "8px",
-                  color: "white",
-                  fontSize: "3em",
-                }}
-                onClick={handleFastForward}
-              >
-                <FastForwardIcon fontSize="inherit" />
-              </IconButton>
-              {/* </button> */}
-              <IconButton
-                style={{
-                  margin: "8px",
-                  color: "white",
-                  fontSize: "2.4em",
-                }}
-                onClick={handleReset}
-              >
-                <RestartAltIcon fontSize="inherit" />
-              </IconButton>
-            </div>
-            <div className="pomo-counter">
-              <p>POMODORO COUNTER: {pomodoroCounter}</p>
-            </div>
+          <div>
+            <Timer
+              timer={timer}
+              isRunning={isRunning}
+              isOnBreak={isOnBreak}
+              formatTime={formatTime}
+              handleStartStop={handleStartStop}
+              handleFastForward={handleFastForward}
+              handleReset={handleReset}
+              pomodoroCounter={pomodoroCounter}
+            />
           </div>
           <TodoMain />
         </div>
