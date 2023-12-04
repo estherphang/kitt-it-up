@@ -6,7 +6,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 // List task (single line of task per row)
 
-const Todo = ({ todo, toggleTodo, deleteTodo, editTodo, handleStartStop }) => {
+const Todo = ({ todo, toggleTodo, deleteTodo, editTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   // Edit button
@@ -19,10 +19,6 @@ const Todo = ({ todo, toggleTodo, deleteTodo, editTodo, handleStartStop }) => {
   //change back to defacult value
   const cancelEdit = () => {
     setIsEditing(false);
-  };
-
-  const handlePlayTimer = () => {
-    handleStartStop(); // Trigger the timer in the App component
   };
 
   return (
@@ -70,8 +66,6 @@ const Todo = ({ todo, toggleTodo, deleteTodo, editTodo, handleStartStop }) => {
                 <DeleteIcon />
               </Button>
             </div>
-            {/* <button onClick={handleEdit}>Edit</button> */}
-            {/* <button onClick={() => deleteTodo(todo.id)}>Delete</button> */}
           </div>
         </>
       )}
