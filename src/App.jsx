@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import TodoMain from "./TodoMain";
+import TodoMain from "./TodoMain.jsx";
 import "./TimerDisplay.css";
-import TimerSettings from "./TimerSettings";
+import TimerSettings from "./TimerSettings.jsx";
 import { Button } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Timer from "./Timer";
+import Timer from "./Timer.jsx";
 import {
   timerLocalStorage,
   breakLocalStorage,
