@@ -38,7 +38,7 @@ export default function App() {
   };
 
   //Alarm sound
-  const audio = new Audio("/meow.mp3");
+  const audio = new Audio("./meow.mp3");
 
   useEffect(() => {
     let interval;
