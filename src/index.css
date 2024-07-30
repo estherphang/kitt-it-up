@@ -67,11 +67,6 @@ body {
   font-size: 0.8em;
   width: 700px;
   text-align: right;
-  background-image: linear-gradient(
-    to right,
-    rgba(8, 14, 69, 0),
-    rgba(8, 14, 69, 0.1)
-  );
 }
 
 /* ---------------------------------------------- */
@@ -110,11 +105,17 @@ body {
 .task-addbtn {
   color: white !important;
   border: 2px solid #e1f5fe !important;
+  margin: 30px;
 }
 
 .task-area {
-  margin: 30px 20px;
+  margin: 20px;
 }
+
+.addingtast-textfield {
+  width: 550px;
+}
+
 .task-list {
   margin: 30px 20px;
 }
@@ -125,6 +126,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.edittask-textfield {
+  width: 450px;
+  color: white !important;
+  font-size: 18px !important;
+  border-bottom: 2px solid white;
 }
 
 .task {
@@ -163,4 +171,124 @@ ul li {
 .completed {
   text-decoration: line-through;
   color: #b2ebf2;
+}
+
+/* ---------------------------------------------- */
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .nav {
+    width: 90%;
+    padding: 20px 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .settings {
+    align-items: center;
+  }
+
+  .timer-container {
+    width: 90%;
+  }
+
+  .text-area,
+  .individualtask-area {
+    width: 100%;
+  }
+
+  .pomo-counter {
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    font-size: 0.8em;
+    width: auto;
+  }
+
+  .timer-title {
+    font-size: 1.8em;
+  }
+
+  .pomo-counter {
+    font-size: 0.7em;
+  }
+
+  .todo-container {
+    width: 90%;
+  }
+
+  .todo-title {
+    font-size: 1.3em;
+  }
+
+  .spaced-button {
+    margin-left: 10px; /* Adjust the value as needed */
+  }
+
+  .edittask-textfield {
+    width: 100%; /* Adjust width for phones */
+  }
+}
+
+/* Phone view */
+@media (max-width: 480px) {
+  .nav {
+    width: 95%;
+    padding: 15px 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .settings {
+    align-items: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .timer-container {
+    width: 90%;
+  }
+  .text-area,
+  .individualtask-area {
+    width: 90%;
+  }
+
+  .pomo-counter {
+    font-size: 1.5em;
+  }
+
+  .pomo-counter {
+    font-size: 0.6em;
+  }
+
+  .todo-container {
+    width: 90%;
+  }
+
+  .todo-title {
+    font-size: 1.2em;
+  }
+
+  .edittask-textfield {
+    width: 100%; /* Adjust width for phones */
+  }
 }

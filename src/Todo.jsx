@@ -42,13 +42,11 @@ const Todo = ({ todo, toggleTodo, deleteTodo, editTodo }) => {
               <Button
                 variant="outlined"
                 type="submit"
-                sx={{
-                  color: "white",
-                  border: "2px solid #e1f5fe",
-                }}
+                className="task-addbtn"
+                sx={{ marginLeft: 2 }}
                 onClick={handleEdit}
               >
-                Edit
+                <span className="hidden">Edit</span>
                 <EditIcon />
               </Button>
             </div>
@@ -56,13 +54,11 @@ const Todo = ({ todo, toggleTodo, deleteTodo, editTodo }) => {
               <Button
                 variant="outlined"
                 type="submit"
-                sx={{
-                  color: "white",
-                  border: "2px solid #e1f5fe",
-                }}
+                className="task-addbtn"
+                sx={{ marginLeft: 2 }}
                 onClick={() => deleteTodo(todo.id)}
               >
-                Delete
+                <span className="hidden">Delete</span>
                 <DeleteIcon />
               </Button>
             </div>

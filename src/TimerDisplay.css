@@ -27,3 +27,19 @@
     color: #e1f5fe; /* Darker shade or desired color */
   }
 }
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .timer-digit {
+    font-size: 6em; /* Adjust font size for tablet view */
+    margin: 25px 25px 12px 25px; /* Adjust margins for tablet view */
+  }
+}
+
+/* Phone view */
+@media (max-width: 480px) {
+  .timer-digit {
+    font-size: 4em; /* Adjust font size for phone view */
+    margin: 15px 15px 8px 15px; /* Adjust margins for phone view */
+  }
+}

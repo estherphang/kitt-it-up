@@ -33,41 +33,40 @@ const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
             value={editedTask}
             onChange={handleInputChange}
             type="text"
-            placeholder="Edit task"
             sx={{
-              width: 440,
-              input: {
-                color: "white",
-                fontSize: "18px",
-                borderBottom: "white",
+              width: "200%",
+              fontSize: "18px",
+              borderBottom: {
+                xs: "1px solid white", // Border thickness for extra-small screens
+                sm: "1.5px solid white", // Border thickness for small screens
+                md: "2px solid white", // Border thickness for medium screens and up
               },
+              color: "white", // Text color
             }}
+            placeholder="Edit task"
           />
           {/* disable save button if string is empty */}
           <div>
             <Button
               variant="outlined"
               type="submit"
-              style={{
-                color: "white",
-                border: "2px solid #e1f5fe",
-              }}
+              className="task-addbtn"
+              sx={{ marginLeft: 2 }}
               disabled={!editedTask.trim()}
             >
-              Save <SaveIcon />
+              <span className="hidden">Save </span>
+              <SaveIcon />
             </Button>
           </div>
           <div>
             <Button
               variant="outlined"
               type="submit"
-              style={{
-                color: "white",
-                border: "2px solid #e1f5fe",
-              }}
+              className="task-addbtn"
+              sx={{ marginLeft: 2 }}
               onClick={cancelEdit}
             >
-              Cancel
+              <span className="hidden">Cancel </span>
               <CancelIcon />
             </Button>
           </div>

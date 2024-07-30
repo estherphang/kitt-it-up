@@ -71,7 +71,7 @@ export default function TodoMain() {
               onChange={(e) => setNewItem(e.target.value)}
               type="text"
               placeholder="Add new task"
-              sx={{ width: 550 }}
+              className="addingtast-textfield"
               InputLabelProps={{ className: "textfield" }}
               InputProps={{
                 className: "textfield-bg",
@@ -80,9 +80,12 @@ export default function TodoMain() {
             <Button
               variant="outlined"
               type="submit"
-              style={{ color: "white", border: "2px solid #e1f5fe" }}
+              className="task-addbtn"
+              sx={{ marginLeft: 2 }}
+              // style={{ color: "white", border: "2px solid #e1f5fe" }}
             >
-              Add Task <AddIcon />
+              <span className="hidden">Add Task </span>
+              <AddIcon />
             </Button>
           </div>
         </form>

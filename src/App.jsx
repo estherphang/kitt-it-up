@@ -153,7 +153,7 @@ export default function App() {
                 onClick={toggleSettings}
               >
                 <SettingsIcon />
-                Settings
+                <span className="hidden">Settings</span>
               </Button>
             )}
 
