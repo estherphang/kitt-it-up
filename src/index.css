@@ -79,14 +79,26 @@ body {
   padding: 30px 0px 0px 0px;
 }
 
+.edittodo-container {
+  width: 700px;
+}
+
 .todo-title {
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: 500;
   padding: 0px 0px 15px 0px;
 }
 
 .text-area {
   width: 700px;
+  margin: auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.edit-text-area {
+  width: 660px;
   margin: auto;
   justify-content: space-between;
   display: flex;
@@ -112,7 +124,7 @@ body {
   margin: 20px;
 }
 
-.addingtast-textfield {
+.addingtask-textfield {
   width: 550px;
 }
 
@@ -126,13 +138,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.edittask-textfield {
-  width: 450px;
-  color: white !important;
-  font-size: 18px !important;
-  border-bottom: 2px solid white;
 }
 
 .task {
@@ -161,7 +166,6 @@ do not edit */
 
 ul {
   list-style-type: none;
-  font-size: 20px;
 }
 
 ul li {
@@ -206,6 +210,10 @@ ul li {
     width: 100%;
   }
 
+  .edit-text-area {
+    width: 111%;
+  }
+
   .pomo-counter {
     margin: 10px 0px 0px 0px;
     padding: 10px;
@@ -221,7 +229,8 @@ ul li {
     font-size: 0.7em;
   }
 
-  .todo-container {
+  .todo-container,
+  .edittodo-container {
     width: 90%;
   }
 
@@ -231,10 +240,6 @@ ul li {
 
   .spaced-button {
     margin-left: 10px; /* Adjust the value as needed */
-  }
-
-  .edittask-textfield {
-    width: 100%; /* Adjust width for phones */
   }
 }
 
@@ -267,28 +272,26 @@ ul li {
   .timer-container {
     width: 90%;
   }
+
   .text-area,
   .individualtask-area {
     width: 90%;
   }
 
-  .pomo-counter {
-    font-size: 1.5em;
+  .edit-text-area {
+    width: 111%;
   }
 
   .pomo-counter {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 
-  .todo-container {
+  .todo-container,
+  .edittodo-container {
     width: 90%;
   }
 
   .todo-title {
     font-size: 1.2em;
-  }
-
-  .edittask-textfield {
-    width: 100%; /* Adjust width for phones */
   }
 }

@@ -62,7 +62,7 @@ export default function TodoMain() {
   return (
     <>
       <div className="todo-container">
-        <h1 className="todo-title">Tasks</h1>
+        <h1 className="todo-title">TASKS</h1>
         <form onSubmit={handleSubmit}>
           <div className="text-area">
             <TextField
@@ -71,7 +71,7 @@ export default function TodoMain() {
               onChange={(e) => setNewItem(e.target.value)}
               type="text"
               placeholder="Add new task"
-              className="addingtast-textfield"
+              className="addingtask-textfield"
               InputLabelProps={{ className: "textfield" }}
               InputProps={{
                 className: "textfield-bg",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Input } from "@mui/material";
+import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -21,21 +22,21 @@ const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
   };
 
   return (
-    <div className="text-area">
+    <div className="edittodo-container">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           handleSave();
         }}
       >
-        <div className="individualtask-area">
+        <div className="edit-text-area">
           <Input
             value={editedTask}
             onChange={handleInputChange}
             type="text"
             sx={{
               width: "200%",
-              fontSize: "18px",
+
               borderBottom: {
                 xs: "1px solid white", // Border thickness for extra-small screens
                 sm: "1.5px solid white", // Border thickness for small screens
@@ -46,6 +47,7 @@ const EditTodo = ({ todo, updateTodo, cancelEdit }) => {
             placeholder="Edit task"
           />
           {/* disable save button if string is empty */}
+
           <div>
             <Button
               variant="outlined"

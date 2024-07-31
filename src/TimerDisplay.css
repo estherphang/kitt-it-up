@@ -40,6 +40,6 @@
 @media (max-width: 480px) {
   .timer-digit {
     font-size: 4em; /* Adjust font size for phone view */
-    margin: 15px 15px 8px 15px; /* Adjust margins for phone view */
+    margin: 12px 12px -8px 12px; /* Adjust margins for phone view */
   }
 }
