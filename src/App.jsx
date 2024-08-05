@@ -139,7 +139,7 @@ export default function App() {
         <div className={isOnBreak ? "breaktime" : "worktime"}>
           <div className="nav">
             <h1 className="logo">
-              <img src="./pomokitty.png" />
+              <img src="./kitty.png" />
               Kitt It Up!
             </h1>
             {!showSetting && (
