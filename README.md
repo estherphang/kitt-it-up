@@ -4,11 +4,15 @@ Kitt It Up is a productivity application inspired by the renowned Pomodoro techn
 
 ## Demo
 
-Refer to this page for the deployment: https://estney.github.io/kitt-it-up/.
+Refer to this page for the deployment: https://pomokitty.estherp.studio/.
 
 ## Feedback
 
 If you have any feedback, please reach out to us at hello.estherp@gmail.com.
+
+# Credit
+
+-- Kitty Image [https://www.flaticon.com/free-icon/kitty_763724?related_id=763724]
 
 # React + Vite
 
