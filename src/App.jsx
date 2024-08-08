@@ -12,6 +12,7 @@ import {
   onBreakLocalStorage,
   countPomoLocalStorage,
 } from "./timerLocalStorage.js";
+import Footer from "./Footer.jsx";
 
 export default function App() {
   //create timer, showing minutes and seconds
@@ -182,21 +183,7 @@ export default function App() {
           </div>
           <TodoMain />
         </div>
-        <footer class="footer">
-          <div class="footer-content">
-            <div class="footer-buttons">
-              <p className="footer-button-width">ABOUT</p>
-              <p>HOW TO USE</p>
-            </div>
-            <p className="footer-font">
-              {" "}
-              Made with <span class="heart">🤍</span> by Esther.{" "}
-            </p>
-            <p className="footer-font">
-              &copy; 2024 PomoKitty. All rights reserved.
-            </p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
