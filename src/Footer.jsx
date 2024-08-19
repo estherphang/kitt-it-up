@@ -5,8 +5,16 @@ export default function Footer() {
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-buttons">
-          <p className="footer-button-width">ABOUT</p>
-          <p className="footer-button-width">HOW TO USE</p>
+          <p className="footer-button-width">
+            <a href="https://estherphang.com/blog/2024/8/18/pomokitty-pomodoro-timer-with-a-cute-kitty-theme">
+              ABOUT
+            </a>
+          </p>
+          <p className="footer-button-width">
+            <a href="https://estherphang.com/blog/2024/8/18/pomokitty-pomodoro-timer-with-a-cute-kitty-theme#How-to-use-Pomokitty">
+              HOW TO USE
+            </a>
+          </p>
           <p>
             <a href="https://estherpstudio.gumroad.com/"> DONATION</a>
           </p>
