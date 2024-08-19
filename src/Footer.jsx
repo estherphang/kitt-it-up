@@ -22,7 +22,7 @@ export default function Footer() {
         <p className="footer-font">
           {" "}
           Made with <span class="heart">🤍</span> by{" "}
-          <a href="https://estherpstudio.gumroad.com/">Esther</a>.{" "}
+          <a href="https://estherphang.com/">Esther</a>.{" "}
         </p>
         <p className="footer-font">
           &copy; 2024 PomoKitty. All rights reserved.
